@@ -10,6 +10,8 @@ on:
   push:
     branches: ["master", "main"]
 
+permissions: write-all
+
 jobs:
   semgrep:
     # User definable name of this GitHub Actions job.
