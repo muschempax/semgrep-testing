@@ -9,7 +9,7 @@ on:
   # Scan mainline branches and report all findings:
   push:
     branches: ["master", "main"]
-  paths-ignore:
+    paths-ignore:
       - '.github/workflows/Semgrep-Mainline+Diff.yml'
 
 permissions:
