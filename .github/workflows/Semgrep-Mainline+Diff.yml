@@ -10,7 +10,12 @@ on:
   push:
     branches: ["master", "main"]
 
-permissions: write-all
+permissions:
+  # required for all workflows
+  security-events: write
+  # for workflows in private repos
+  actions: read
+  contents: read
 
 jobs:
   semgrep:
