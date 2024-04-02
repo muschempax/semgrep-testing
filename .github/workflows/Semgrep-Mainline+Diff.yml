@@ -42,7 +42,8 @@ jobs:
           # Generate a token from Semgrep Cloud Platform > Settings
           # and add it to your GitHub secrets.
           SEMGREP_APP_TOKEN: ${{ secrets.SEMGREP_APP_TOKEN }}
-
+      - name: Correct SARIF File
+        run: python fix_sarif.py semgrep.sarif
       - name: Upload SARIF file for GitHub Advanced Security Dashboard
         uses: github/codeql-action/upload-sarif@v3
         with:
