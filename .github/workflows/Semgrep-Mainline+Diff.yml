@@ -35,6 +35,8 @@ jobs:
     steps:
       - name: Checkout 
         uses: actions/checkout@v4
+
+      - name: Semgrep Scan
         run: semgrep ci --sarif > semgrep.sarif
         env:
           # Connect to Semgrep Cloud Platform through your SEMGREP_APP_TOKEN.
