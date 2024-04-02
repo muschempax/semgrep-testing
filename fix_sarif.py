@@ -24,11 +24,8 @@ def fix_sarif_columns(sarif_path):
                     region["endColumn"] = 1
     
     # Write the fixed SARIF data back to a new file
-    corrected_file_path = sarif_path.replace(".sarif", "fixed_semgrep.sarif")
+    corrected_file_path = sarif_path.replace("semgrep.sarif", "fixed_semgrep.sarif")
     with open(corrected_file_path, 'w') as file:
         json.dump(sarif_data, file, indent=4)
-    
-    return corrected_file_path
 
-corrected_sarif_file_path = fix_sarif_columns('semgrep.sarif')
-corrected_sarif_file_path
+fix_sarif_columns('semgrep.sarif')
